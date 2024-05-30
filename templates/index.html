@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to FilmFlix {% endblock %}</h1>
+    {% for film in tblFilms %}
+        <a href=" {{ url_for('identity', filmID = film['filmID']) }} " >
+
+            <h2>{{ film['title']}} </h2>
+        </a>
+        <span class="badge badge-primary">{{ film['yearReleased']}} </span>
+        <span class="badge badge-primary">{{ film['created'] }}</span>
+            <a href="{{ url_for('edit', filmID = film['filmID'])}}">
+                <span class="badge badge-warning">Update</span>
+            </a>
+        <hr>
+    {% endfor %}
+{% endblock %}

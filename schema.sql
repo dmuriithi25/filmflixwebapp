@@ -1,0 +1,12 @@
+-- DROP TABLE IS EXISTS tblFilms;
+
+CREATE TABLE tblFilms(
+
+    filmID	INTEGER PRIMARY KEY AUTOINCREMENT,
+	created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+	title	TEXT,
+	yearReleased INTEGER,
+	rating	TEXT,
+    duration INTEGER,
+    genre TEXT
+);
